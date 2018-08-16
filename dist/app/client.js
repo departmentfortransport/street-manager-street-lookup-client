@@ -29,5 +29,25 @@ class StreetManagerStreetLookupClient {
             }
         });
     }
+    getStreet(easting, northing) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let config = { params: { easting: easting, northing: northing } };
+            return this.httpHandler(() => this.axios.get('/nsg/street', config));
+        });
+    }
+    httpHandler(request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let response = yield request();
+                if (response.data) {
+                    return response.data;
+                }
+            }
+            catch (err) {
+                err.status = err.response.status;
+                return Promise.reject(err);
+            }
+        });
+    }
 }
 exports.StreetManagerStreetLookupClient = StreetManagerStreetLookupClient;
