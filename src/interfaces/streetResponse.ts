@@ -1,5 +1,5 @@
 export interface StreetResponse {
-  usrn: string
+  usrn: number
   street_descriptor: string
   area: string
   town: string
