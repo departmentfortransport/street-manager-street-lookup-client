@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
-import { StreetResponse } from '../interfaces/StreetResponse'
+import { StreetResponse } from '../interfaces/streetResponse'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
