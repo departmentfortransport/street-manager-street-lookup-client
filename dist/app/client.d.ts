@@ -1,4 +1,4 @@
-import { StreetResponse } from '../interfaces/StreetResponse';
+import { StreetResponse } from '../interfaces/streetResponse';
 export interface StreetManagerStreetLookupClientConfig {
     baseURL: string;
     timeout?: number;
