@@ -18,6 +18,9 @@ class StreetManagerStreetLookupClient {
             timeout: this.config.timeout
         });
     }
+    setAuthTokenHeader(token) {
+        this.axios.defaults.headers.common['Authorization'] = token;
+    }
     isAvailable() {
         return __awaiter(this, void 0, void 0, function* () {
             try {

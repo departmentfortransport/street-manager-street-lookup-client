@@ -16,6 +16,10 @@ export class StreetManagerStreetLookupClient {
     })
   }
 
+  public setAuthTokenHeader(token: string) {
+    this.axios.defaults.headers.common['Authorization'] = token
+  }
+
   public async isAvailable(): Promise<boolean> {
     try {
       let response: AxiosResponse = await this.axios.get('/status')
