@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
-import { OK } from 'http-status-codes'
 import { StreetResponse } from '../interfaces/streetResponse'
 
 export interface StreetManagerStreetLookupClientConfig {
@@ -16,13 +15,8 @@ export class StreetManagerStreetLookupClient {
     })
   }
 
-  public async isAvailable(): Promise<boolean> {
-    try {
-      let response: AxiosResponse = await this.axios.get('/status')
-      return response.status === OK
-    } catch (err) {
-      return false
-    }
+  public async status(): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.get('/status'))
   }
 
   public async getStreet(requestId: string, easting: number, northing: number) {
@@ -37,7 +31,9 @@ export class StreetManagerStreetLookupClient {
         return response.data
       }
     } catch (err) {
-      err.status = err.response.status
+      if (err && err.response && err.response.status) {
+        err.status = err.response.status
+      }
       return Promise.reject(err)
     }
   }
