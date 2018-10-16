@@ -29,9 +29,9 @@ class StreetManagerStreetLookupClient {
             }
         });
     }
-    getStreet(easting, northing) {
+    getStreet(requestId, easting, northing) {
         return __awaiter(this, void 0, void 0, function* () {
-            let config = { params: { easting: easting, northing: northing } };
+            let config = this.generateRequestConfig(requestId, { easting: easting, northing: northing });
             return this.httpHandler(() => this.axios.get('/nsg/street', config));
         });
     }
@@ -48,6 +48,11 @@ class StreetManagerStreetLookupClient {
                 return Promise.reject(err);
             }
         });
+    }
+    generateRequestConfig(requestId, params) {
+        let headers = {};
+        headers['request-id'] = requestId;
+        return { headers: headers, params: params };
     }
 }
 exports.StreetManagerStreetLookupClient = StreetManagerStreetLookupClient;
