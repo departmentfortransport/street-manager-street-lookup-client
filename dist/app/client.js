@@ -51,7 +51,7 @@ class StreetManagerStreetLookupClient {
     }
     generateRequestConfig(requestId, params) {
         let headers = {};
-        headers['request-id'] = requestId;
+        headers['x-request-id'] = requestId;
         return { headers: headers, params: params };
     }
 }
