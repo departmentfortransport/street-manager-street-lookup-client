@@ -44,7 +44,7 @@ export class StreetManagerStreetLookupClient {
 
   private generateRequestConfig(requestId, params): AxiosRequestConfig {
     let headers = {}
-    headers['request-id'] = requestId
+    headers['x-request-id'] = requestId
     return { headers: headers, params: params }
   }
 }
