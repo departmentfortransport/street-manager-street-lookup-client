@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { OK } from 'http-status-codes'
 import { StreetResponse } from '../interfaces/streetResponse'
+import { AdditionalStreetDataResponse } from '../interfaces/additionalStreetDataResponse'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
@@ -28,6 +29,16 @@ export class StreetManagerStreetLookupClient {
   public async getStreet(requestId: string, easting: number, northing: number) {
     let config: AxiosRequestConfig = this.generateRequestConfig(requestId, { easting: easting, northing: northing })
     return this.httpHandler<StreetResponse>(() => this.axios.get('/nsg/street', config))
+  }
+
+  public async getStreetGeojson(requestId: string, usrn: string): Promise<string> {
+    let config: AxiosRequestConfig = this.generateRequestConfig(requestId, {})
+    return this.httpHandler<string>(() => this.axios.get(`/nsg/street/${usrn}/geojson`, config))
+  }
+
+  public async getStreetAdditionalStreetData(requestId: string, usrn: string) {
+    let config: AxiosRequestConfig = this.generateRequestConfig(requestId, {})
+    return this.httpHandler<AdditionalStreetDataResponse[]>(() => this.axios.get(`/nsg/street/${usrn}/asd`, config))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

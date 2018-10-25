@@ -35,6 +35,18 @@ class StreetManagerStreetLookupClient {
             return this.httpHandler(() => this.axios.get('/nsg/street', config));
         });
     }
+    getStreetGeojson(requestId, usrn) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let config = this.generateRequestConfig(requestId, {});
+            return this.httpHandler(() => this.axios.get(`/nsg/street/${usrn}/geojson`, config));
+        });
+    }
+    getStreetAdditionalStreetData(requestId, usrn) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let config = this.generateRequestConfig(requestId, {});
+            return this.httpHandler(() => this.axios.get(`/nsg/street/${usrn}/asd`, config));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
