@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
-const http_status_codes_1 = require("http-status-codes");
 class StreetManagerStreetLookupClient {
     constructor(config) {
         this.config = config;
@@ -18,15 +17,9 @@ class StreetManagerStreetLookupClient {
             timeout: this.config.timeout
         });
     }
-    isAvailable() {
+    status() {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let response = yield this.axios.get('/status');
-                return response.status === http_status_codes_1.OK;
-            }
-            catch (err) {
-                return false;
-            }
+            return this.httpHandler(() => this.axios.get('/status'));
         });
     }
     getStreet(requestId, easting, northing) {
@@ -44,7 +37,9 @@ class StreetManagerStreetLookupClient {
                 }
             }
             catch (err) {
-                err.status = err.response.status;
+                if (err && err.response && err.response.status) {
+                    err.status = err.response.status;
+                }
                 return Promise.reject(err);
             }
         });
