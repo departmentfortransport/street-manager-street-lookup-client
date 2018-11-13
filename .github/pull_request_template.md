@@ -16,9 +16,9 @@ Please explain briefly the changes you made here.
 - [ ] Commit messages are meaningful
 - [ ] Add `DON'T MERGE YET` label if you wan't to postpone merge
 - [ ] README updated if required
-- [ ] `healthcheck` endpoint updated if required
+- [ ] `healthcheck` endpoint updated if a critical depenendency e.g. a new database has been added
 - [ ] Authentication is applied if required
-- [ ] Logging and auditing are added if appropriate
+- [ ] Signficant events are being logged e.g. error scenarios
+- [ ] Any action that changes a database entity is audited
 - [ ] Dockerfile updated if required
-- [ ] NPM Audit is passing
 - [ ] Associated documentation has been updated e.g. data model
