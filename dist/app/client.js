@@ -8,7 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const qs = require("qs");
 const axios_1 = require("axios");
+const http_status_codes_1 = require("http-status-codes");
 class StreetManagerStreetLookupClient {
     constructor(config) {
         this.config = config;
@@ -22,10 +24,10 @@ class StreetManagerStreetLookupClient {
             return this.httpHandler(() => this.axios.get('/status'));
         });
     }
-    getStreet(requestId, easting, northing) {
+    getStreet(config, easting, northing) {
         return __awaiter(this, void 0, void 0, function* () {
-            let config = this.generateRequestConfig(requestId, { easting: easting, northing: northing });
-            return this.httpHandler(() => this.axios.get('/nsg/street', config));
+            let axiosConfig = this.generateRequestConfig(config, { easting: easting, northing: northing });
+            return this.httpHandler(() => this.axios.get('/nsg/street', axiosConfig));
         });
     }
     httpHandler(request) {
@@ -37,17 +39,31 @@ class StreetManagerStreetLookupClient {
                 }
             }
             catch (err) {
-                if (err && err.response && err.response.status) {
-                    err.status = err.response.status;
-                }
-                return Promise.reject(err);
+                return this.handleError(err);
             }
         });
     }
-    generateRequestConfig(requestId, params) {
-        let headers = {};
-        headers['x-request-id'] = requestId;
-        return { headers: headers, params: params };
+    handleError(err) {
+        err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
+        return Promise.reject(err);
+    }
+    generateRequestConfig(config, request) {
+        let requestConfig = {
+            headers: {
+                token: config.token,
+                'x-request-id': config.requestId
+            }
+        };
+        if (!request) {
+            requestConfig.params = {};
+        }
+        else {
+            requestConfig.params = request;
+            requestConfig.paramsSerializer = (params) => {
+                return qs.stringify(params, { arrayFormat: 'repeat' });
+            };
+        }
+        return requestConfig;
     }
 }
 exports.StreetManagerStreetLookupClient = StreetManagerStreetLookupClient;

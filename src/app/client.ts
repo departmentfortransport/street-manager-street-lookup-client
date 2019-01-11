@@ -1,5 +1,8 @@
+import * as qs from 'qs'
 import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig } from 'axios'
 import { StreetResponse } from '../interfaces/streetResponse'
+import { RequestConfig } from '../interfaces/requestConfig'
+import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
@@ -19,9 +22,9 @@ export class StreetManagerStreetLookupClient {
     return this.httpHandler<void>(() => this.axios.get('/status'))
   }
 
-  public async getStreet(requestId: string, easting: number, northing: number) {
-    let config: AxiosRequestConfig = this.generateRequestConfig(requestId, { easting: easting, northing: northing })
-    return this.httpHandler<StreetResponse>(() => this.axios.get('/nsg/street', config))
+  public async getStreet(config: RequestConfig, easting: number, northing: number) {
+    let axiosConfig: AxiosRequestConfig = this.generateRequestConfig(config, { easting: easting, northing: northing })
+    return this.httpHandler<StreetResponse>(() => this.axios.get('/nsg/street', axiosConfig))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
@@ -31,16 +34,32 @@ export class StreetManagerStreetLookupClient {
         return response.data
       }
     } catch (err) {
-      if (err && err.response && err.response.status) {
-        err.status = err.response.status
-      }
-      return Promise.reject(err)
+      return this.handleError(err)
     }
   }
 
-  private generateRequestConfig(requestId, params): AxiosRequestConfig {
-    let headers = {}
-    headers['x-request-id'] = requestId
-    return { headers: headers, params: params }
+  private handleError(err) {
+    err.status = err.response ? err.response.status : INTERNAL_SERVER_ERROR
+    return Promise.reject(err)
+  }
+
+  private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
+    let requestConfig: AxiosRequestConfig = {
+      headers: {
+        token: config.token,
+        'x-request-id': config.requestId
+      }
+    }
+
+    if (!request) {
+      requestConfig.params = {}
+    } else {
+      requestConfig.params = request
+      requestConfig.paramsSerializer = (params) => {
+        return qs.stringify(params, { arrayFormat: 'repeat' })
+      }
+    }
+
+    return requestConfig
   }
 }
