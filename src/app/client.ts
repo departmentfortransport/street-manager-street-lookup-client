@@ -22,9 +22,9 @@ export class StreetManagerStreetLookupClient {
     return this.httpHandler<void>(() => this.axios.get('/status'))
   }
 
-  public async getStreet(config: RequestConfig, easting: number, northing: number) {
+  public async getStreets(config: RequestConfig, easting: number, northing: number) {
     let axiosConfig: AxiosRequestConfig = this.generateRequestConfig(config, { easting: easting, northing: northing })
-    return this.httpHandler<StreetResponse>(() => this.axios.get('/nsg/street', axiosConfig))
+    return this.httpHandler<StreetResponse[]>(() => this.axios.get('/nsg/streets', axiosConfig))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

@@ -9,7 +9,7 @@ export declare class StreetManagerStreetLookupClient {
     private axios;
     constructor(config: StreetManagerStreetLookupClientConfig);
     status(): Promise<void>;
-    getStreet(config: RequestConfig, easting: number, northing: number): Promise<StreetResponse>;
+    getStreets(config: RequestConfig, easting: number, northing: number): Promise<StreetResponse[]>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
