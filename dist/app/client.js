@@ -24,10 +24,10 @@ class StreetManagerStreetLookupClient {
             return this.httpHandler(() => this.axios.get('/status'));
         });
     }
-    getStreet(config, easting, northing) {
+    getStreets(config, easting, northing) {
         return __awaiter(this, void 0, void 0, function* () {
             let axiosConfig = this.generateRequestConfig(config, { easting: easting, northing: northing });
-            return this.httpHandler(() => this.axios.get('/nsg/street', axiosConfig));
+            return this.httpHandler(() => this.axios.get('/nsg/streets', axiosConfig));
         });
     }
     httpHandler(request) {
