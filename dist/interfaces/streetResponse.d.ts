@@ -1,4 +1,5 @@
 import { AdditionalSpecialDesignationsResponse } from './additionalSpecialDesignationsResponse';
+import { AdditionalInterestResponse } from './additionalInterestResponse';
 export interface StreetResponse {
     usrn: number;
     street_descriptor: string;
@@ -9,4 +10,6 @@ export interface StreetResponse {
     road_category: number;
     traffic_sensitive: boolean;
     additional_special_designations_response: AdditionalSpecialDesignationsResponse[];
+    additional_interest_response: AdditionalInterestResponse[];
+    street_line: string;
 }
