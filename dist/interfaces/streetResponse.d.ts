@@ -9,4 +9,5 @@ export interface StreetResponse {
     road_category: number;
     traffic_sensitive: boolean;
     additional_special_designations_response: AdditionalSpecialDesignationsResponse[];
+    street_line: string;
 }
