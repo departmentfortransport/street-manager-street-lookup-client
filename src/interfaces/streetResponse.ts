@@ -7,4 +7,5 @@ export interface StreetResponse {
   authority_swa_code: string
   road_category: number
   traffic_sensitive: boolean
+  street_line: string
 }
