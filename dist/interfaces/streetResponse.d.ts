@@ -1,3 +1,4 @@
+import { AdditionalSpecialDesignationsResponse } from './additionalSpecialDesignationsResponse';
 export interface StreetResponse {
     usrn: number;
     street_descriptor: string;
@@ -7,5 +8,6 @@ export interface StreetResponse {
     authority_swa_code: string;
     road_category: number;
     traffic_sensitive: boolean;
+    additional_special_designations_response: AdditionalSpecialDesignationsResponse[];
     street_line: string;
 }
