@@ -4,7 +4,7 @@ Please explain briefly the changes you made here.
 
 ## Checklist
 
-- [ ] All tests passing (Unit / Integration / Automated UI)
+- [ ] All tests passing (Unit / Integration / Automated UI / Performance)
 - [ ] Code coverage suitable
 - [ ] Pa11y passing
 - [ ] WAVE toolbar run on new or updated screens
