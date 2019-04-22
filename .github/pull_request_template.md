@@ -12,6 +12,7 @@ Please explain briefly the changes you made here.
 - [ ] If your pull request depends on any other, please link them
 - [ ] Quality Street approval
 - [ ] Street Smart approval
+- [ ] API definitions updated
 - [ ] Any action that changes a database entity is audited
 - [ ] Signficant events are being logged e.g. error scenarios
 - [ ] Commit messages are meaningful
