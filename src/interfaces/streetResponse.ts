@@ -7,6 +7,7 @@ export interface StreetResponse {
   street_descriptor: string
   area: string
   town: string
+  administrative_area: string
   authority: string
   authority_swa_code: string
   road_category: number
