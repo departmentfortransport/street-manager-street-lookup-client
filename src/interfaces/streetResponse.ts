@@ -14,5 +14,5 @@ export interface StreetResponse {
   primary_notice_authorities: PrimaryNoticeAuthority[]
   interest_authorities: InterestAuthority[]
   additional_special_designations_response: AdditionalSpecialDesignationsResponse[]
-  street_line: string
+  street_line?: string
 }
