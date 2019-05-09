@@ -30,6 +30,11 @@ class StreetManagerStreetLookupClient {
             return this.httpHandler(() => this.axios.get('/nsg/streets', axiosConfig));
         });
     }
+    getStreetsByUsrn(config, usrn) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/nsg/streets/${usrn}`, this.generateRequestConfig(config)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

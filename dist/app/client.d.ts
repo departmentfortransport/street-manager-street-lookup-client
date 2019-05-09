@@ -10,6 +10,7 @@ export declare class StreetManagerStreetLookupClient {
     constructor(config: StreetManagerStreetLookupClientConfig);
     status(): Promise<void>;
     getStreets(config: RequestConfig, easting: number, northing: number): Promise<StreetResponse[]>;
+    getStreetsByUsrn(config: RequestConfig, usrn: number): Promise<StreetResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
