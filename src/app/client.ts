@@ -27,6 +27,10 @@ export class StreetManagerStreetLookupClient {
     return this.httpHandler<StreetResponse[]>(() => this.axios.get('/nsg/streets', axiosConfig))
   }
 
+  public async getStreetsByUsrn(config: RequestConfig, usrn: number): Promise<StreetResponse> {
+    return this.httpHandler<StreetResponse>(() => this.axios.get(`/nsg/streets/${usrn}`, this.generateRequestConfig(config)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()
