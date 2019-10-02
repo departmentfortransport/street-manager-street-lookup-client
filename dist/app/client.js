@@ -59,6 +59,9 @@ class StreetManagerStreetLookupClient {
                 'x-request-id': config.requestId
             }
         };
+        if (config.frontendToken) {
+            requestConfig.headers.frontendToken = config.frontendToken;
+        }
         if (!request) {
             requestConfig.params = {};
         }

@@ -55,6 +55,10 @@ export class StreetManagerStreetLookupClient {
       }
     }
 
+    if (config.frontendToken) {
+      requestConfig.headers.frontendToken = config.frontendToken
+    }
+
     if (!request) {
       requestConfig.params = {}
     } else {

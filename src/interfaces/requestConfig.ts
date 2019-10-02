@@ -1,4 +1,5 @@
 export interface RequestConfig {
   token?: string,
-  requestId: string
+  requestId: string,
+  frontendToken?: string
 }
