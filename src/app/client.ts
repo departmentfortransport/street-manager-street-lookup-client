@@ -3,6 +3,7 @@ import axios, { AxiosInstance, AxiosResponse, AxiosPromise, AxiosRequestConfig }
 import { StreetResponse } from '../interfaces/streetResponse'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
+import { StreetSummaryResponse } from '../interfaces/streetSummaryResponse'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
@@ -29,6 +30,11 @@ export class StreetManagerStreetLookupClient {
 
   public async getStreetsByUsrn(config: RequestConfig, usrn: number): Promise<StreetResponse> {
     return this.httpHandler<StreetResponse>(() => this.axios.get(`/nsg/streets/${usrn}`, this.generateRequestConfig(config)))
+  }
+
+  public async getStreetsByQuery(config: RequestConfig, query: string): Promise<StreetSummaryResponse[]> {
+    let axiosConfig: AxiosRequestConfig = this.generateRequestConfig(config, { query: query })
+    return this.httpHandler<StreetSummaryResponse[]>(() => this.axios.get(`/nsg/search`, axiosConfig))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
