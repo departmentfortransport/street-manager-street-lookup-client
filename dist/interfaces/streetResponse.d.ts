@@ -14,4 +14,5 @@ export interface StreetResponse {
     interest_authorities: InterestAuthority[];
     additional_special_designations_response: AdditionalSpecialDesignationsResponse[];
     street_line?: string;
+    street_centre_point?: string;
 }
