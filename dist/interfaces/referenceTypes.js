@@ -1,5 +1,33 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var AdditionalSpecialDesignationCode;
+(function (AdditionalSpecialDesignationCode) {
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["protected_street"] = 1] = "protected_street";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["traffic_sensitive"] = 2] = "traffic_sensitive";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["special_engineering_difficulty"] = 3] = "special_engineering_difficulty";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["proposed_special_engineering_difficulty"] = 6] = "proposed_special_engineering_difficulty";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["level_crossing_safety_zone"] = 8] = "level_crossing_safety_zone";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["environmentally_sensitive_areas"] = 9] = "environmentally_sensitive_areas";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["structures_not_designated_special_engineering_difficulty"] = 10] = "structures_not_designated_special_engineering_difficulty";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["pipelines_and_specialist_cables"] = 12] = "pipelines_and_specialist_cables";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["priority_lanes"] = 13] = "priority_lanes";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["lane_rental"] = 16] = "lane_rental";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["streets_subject_to_early_notification_of_immediate_activities"] = 17] = "streets_subject_to_early_notification_of_immediate_activities";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["special_events"] = 18] = "special_events";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["parking_bays_and_restrictions"] = 19] = "parking_bays_and_restrictions";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["pedestrian_crossings"] = 20] = "pedestrian_crossings";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["Traffic_signals_and_traffic_sensors"] = 20] = "Traffic_signals_and_traffic_sensors";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["speed_limits"] = 21] = "speed_limits";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["transport_authority_critical_apparatus"] = 22] = "transport_authority_critical_apparatus";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["strategic_route"] = 23] = "strategic_route";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["street_lighting"] = 24] = "street_lighting";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["drainage_and_flood_risk"] = 25] = "drainage_and_flood_risk";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["unusual_traffic_layout"] = 26] = "unusual_traffic_layout";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["local_considerations"] = 27] = "local_considerations";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["winter_maintenance_routes"] = 28] = "winter_maintenance_routes";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["hgv_approved_routes"] = 29] = "hgv_approved_routes";
+    AdditionalSpecialDesignationCode[AdditionalSpecialDesignationCode["emergency_services_routes"] = 30] = "emergency_services_routes";
+})(AdditionalSpecialDesignationCode = exports.AdditionalSpecialDesignationCode || (exports.AdditionalSpecialDesignationCode = {}));
 var AdditionalSpecialDesignationsPeriodicityCode;
 (function (AdditionalSpecialDesignationsPeriodicityCode) {
     AdditionalSpecialDesignationsPeriodicityCode[AdditionalSpecialDesignationsPeriodicityCode["everyday"] = 1] = "everyday";
