@@ -12,7 +12,7 @@ export enum AdditionalSpecialDesignationCode {
   streets_subject_to_early_notification_of_immediate_activities = 17,
   special_events = 18,
   parking_bays_and_restrictions = 19,
-  pedestrian_crossings, Traffic_signals_and_traffic_sensors = 20,
+  pedestrian_crossings_traffic_signals_and_traffic_sensors = 20,
   speed_limits = 21,
   transport_authority_critical_apparatus = 22,
   strategic_route = 23,
