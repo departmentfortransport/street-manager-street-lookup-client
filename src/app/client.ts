@@ -4,7 +4,6 @@ import { StreetResponse } from '../interfaces/streetResponse'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import { StreetSummaryResponse } from '../interfaces/streetSummaryResponse'
-import * as HttpProxyAgent from 'http-proxy-agent'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
@@ -14,9 +13,9 @@ export interface StreetManagerStreetLookupClientConfig {
 export class StreetManagerStreetLookupClient {
   private axios: AxiosInstance
   constructor(private config: StreetManagerStreetLookupClientConfig) {
-    const agent = new HttpProxyAgent(this.config.baseURL)
     this.axios = axios.create({
-      httpAgent: agent
+      baseURL: this.config.baseURL,
+      timeout: this.config.timeout
     })
   }
 

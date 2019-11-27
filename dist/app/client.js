@@ -11,13 +11,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const qs = require("qs");
 const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
-const HttpProxyAgent = require("http-proxy-agent");
 class StreetManagerStreetLookupClient {
     constructor(config) {
         this.config = config;
-        const agent = new HttpProxyAgent(this.config.baseURL);
         this.axios = axios_1.default.create({
-            httpAgent: agent
+            baseURL: this.config.baseURL,
+            timeout: this.config.timeout
         });
     }
     status() {
