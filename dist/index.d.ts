@@ -6,3 +6,4 @@ export * from './interfaces/primaryNoticeAuthority';
 export * from './interfaces/interestAuthority';
 export * from './interfaces/additionalSpecialDesignationsResponse';
 export * from './interfaces/streetSummaryResponse';
+export * from './interfaces/geojsonTypes';
