@@ -7,4 +7,5 @@ export interface AdditionalSpecialDesignationsResponse {
   special_desig_start_time?: number
   special_desig_end_time?: number
   special_desig_periodicity_code?: AdditionalSpecialDesignationsPeriodicityCode
+  special_desig_coordinates?: any
 }
