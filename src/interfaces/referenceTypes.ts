@@ -40,3 +40,13 @@ export enum AdditionalSpecialDesignationsPeriodicityCode {
   continuous_62 = 15,
   special_arrangements_63 = 16
 }
+
+export enum Role {
+  Planner = 'Planner',
+  HighwayAuthority = 'HighwayAuthority',
+  Admin = 'Admin',
+  Contractor = 'Contractor',
+  API = 'API',
+  UI = 'UI',
+  DataExport = 'DataExport'
+}

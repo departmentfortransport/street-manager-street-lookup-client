@@ -43,3 +43,13 @@ var AdditionalSpecialDesignationsPeriodicityCode;
     AdditionalSpecialDesignationsPeriodicityCode[AdditionalSpecialDesignationsPeriodicityCode["continuous_62"] = 15] = "continuous_62";
     AdditionalSpecialDesignationsPeriodicityCode[AdditionalSpecialDesignationsPeriodicityCode["special_arrangements_63"] = 16] = "special_arrangements_63";
 })(AdditionalSpecialDesignationsPeriodicityCode = exports.AdditionalSpecialDesignationsPeriodicityCode || (exports.AdditionalSpecialDesignationsPeriodicityCode = {}));
+var Role;
+(function (Role) {
+    Role["Planner"] = "Planner";
+    Role["HighwayAuthority"] = "HighwayAuthority";
+    Role["Admin"] = "Admin";
+    Role["Contractor"] = "Contractor";
+    Role["API"] = "API";
+    Role["UI"] = "UI";
+    Role["DataExport"] = "DataExport";
+})(Role = exports.Role || (exports.Role = {}));
