@@ -27,8 +27,7 @@ class StreetManagerStreetLookupClient {
     }
     getStreets(config, easting, northing) {
         return __awaiter(this, void 0, void 0, function* () {
-            let axiosConfig = this.generateRequestConfig(config, { easting: easting, northing: northing });
-            return this.httpHandler(() => this.axios.get('/nsg/streets', axiosConfig));
+            return this.httpHandler(() => this.axios.get('/nsg/streets', this.generateRequestConfig(config, { easting: easting, northing: northing })));
         });
     }
     getStreetsByUsrn(config, usrn) {
