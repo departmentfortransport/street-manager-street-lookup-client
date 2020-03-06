@@ -40,3 +40,16 @@ export enum AdditionalSpecialDesignationsPeriodicityCode {
   continuous_62 = 15,
   special_arrangements_63 = 16
 }
+
+export enum ReinstatementTypeCode {
+  carriageway_type_1 = 1,
+  carriageway_type_2 = 2,
+  carriageway_type_3 = 3,
+  carriageway_type_4 = 4,
+  carriageway_type_0 = 5,
+  high_duty_footway = 6,
+  high_amenity_footway = 7,
+  other_footways = 8,
+  private_street = 9,
+  carriageway_type_6 = 10
+}

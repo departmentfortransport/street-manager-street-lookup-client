@@ -43,3 +43,16 @@ var AdditionalSpecialDesignationsPeriodicityCode;
     AdditionalSpecialDesignationsPeriodicityCode[AdditionalSpecialDesignationsPeriodicityCode["continuous_62"] = 15] = "continuous_62";
     AdditionalSpecialDesignationsPeriodicityCode[AdditionalSpecialDesignationsPeriodicityCode["special_arrangements_63"] = 16] = "special_arrangements_63";
 })(AdditionalSpecialDesignationsPeriodicityCode = exports.AdditionalSpecialDesignationsPeriodicityCode || (exports.AdditionalSpecialDesignationsPeriodicityCode = {}));
+var ReinstatementTypeCode;
+(function (ReinstatementTypeCode) {
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_1"] = 1] = "carriageway_type_1";
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_2"] = 2] = "carriageway_type_2";
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_3"] = 3] = "carriageway_type_3";
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_4"] = 4] = "carriageway_type_4";
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_0"] = 5] = "carriageway_type_0";
+    ReinstatementTypeCode[ReinstatementTypeCode["high_duty_footway"] = 6] = "high_duty_footway";
+    ReinstatementTypeCode[ReinstatementTypeCode["high_amenity_footway"] = 7] = "high_amenity_footway";
+    ReinstatementTypeCode[ReinstatementTypeCode["other_footways"] = 8] = "other_footways";
+    ReinstatementTypeCode[ReinstatementTypeCode["private_street"] = 9] = "private_street";
+    ReinstatementTypeCode[ReinstatementTypeCode["carriageway_type_6"] = 10] = "carriageway_type_6";
+})(ReinstatementTypeCode = exports.ReinstatementTypeCode || (exports.ReinstatementTypeCode = {}));

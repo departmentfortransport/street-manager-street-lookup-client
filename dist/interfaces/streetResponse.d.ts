@@ -2,6 +2,7 @@ import { AdditionalSpecialDesignationsResponse } from './additionalSpecialDesign
 import { PrimaryNoticeAuthority } from './primaryNoticeAuthority';
 import { InterestAuthority } from './interestAuthority';
 import { GeoJSONCentrePoint, GeoJSONMultiLineString } from './geojsonTypes';
+import { ReinstatementType } from './reinstatementType';
 export interface StreetResponse {
     usrn: number;
     street_descriptor: string;
@@ -9,7 +10,9 @@ export interface StreetResponse {
     town: string;
     authority: string;
     authority_swa_code: string;
+    /** DEPRECATED */
     road_category: number;
+    reinstatement_types: ReinstatementType[];
     traffic_sensitive: boolean;
     primary_notice_authorities: PrimaryNoticeAuthority[];
     interest_authorities: InterestAuthority[];
