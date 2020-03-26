@@ -4,6 +4,7 @@ import { StreetSummaryResponse } from '../interfaces/streetSummaryResponse';
 export interface StreetManagerStreetLookupClientConfig {
     baseURL: string;
     timeout?: number;
+    disableCertificateVerification?: boolean;
 }
 export declare class StreetManagerStreetLookupClient {
     private config;
