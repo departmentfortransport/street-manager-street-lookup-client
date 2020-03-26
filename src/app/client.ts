@@ -4,20 +4,30 @@ import { StreetResponse } from '../interfaces/streetResponse'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import { StreetSummaryResponse } from '../interfaces/streetSummaryResponse'
-import * as HttpProxyAgent from 'http-proxy-agent'
+import { Agent } from 'https'
 
 export interface StreetManagerStreetLookupClientConfig {
   baseURL: string,
-  timeout?: number
+  timeout?: number,
+  disableCertificateVerification?: boolean
 }
 
 export class StreetManagerStreetLookupClient {
   private axios: AxiosInstance
+
   constructor(private config: StreetManagerStreetLookupClientConfig) {
-    const agent = new HttpProxyAgent(this.config.baseURL)
-    this.axios = axios.create({
-      httpAgent: agent
-    })
+    let axiosRequestConfig: AxiosRequestConfig = {
+      baseURL: this.config.baseURL,
+      timeout: this.config.timeout
+    }
+
+    if (this.config.disableCertificateVerification) {
+      axiosRequestConfig.httpsAgent = new Agent({
+        rejectUnauthorized: false
+      })
+    }
+
+    this.axios = axios.create(axiosRequestConfig)
   }
 
   public async status(): Promise<void> {

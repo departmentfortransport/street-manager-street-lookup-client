@@ -11,14 +11,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const qs = require("qs");
 const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
-const HttpProxyAgent = require("http-proxy-agent");
+const https_1 = require("https");
 class StreetManagerStreetLookupClient {
     constructor(config) {
         this.config = config;
-        const agent = new HttpProxyAgent(this.config.baseURL);
-        this.axios = axios_1.default.create({
-            httpAgent: agent
-        });
+        let axiosRequestConfig = {
+            baseURL: this.config.baseURL,
+            timeout: this.config.timeout
+        };
+        if (this.config.disableCertificateVerification) {
+            axiosRequestConfig.httpsAgent = new https_1.Agent({
+                rejectUnauthorized: false
+            });
+        }
+        this.axios = axios_1.default.create(axiosRequestConfig);
     }
     status() {
         return __awaiter(this, void 0, void 0, function* () {
