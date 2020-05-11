@@ -16,7 +16,7 @@ const https_1 = require("https");
 class StreetManagerStreetLookupClient {
     constructor(config) {
         this.config = config;
-        let axiosRequestConfig = {
+        const axiosRequestConfig = {
             baseURL: this.config.baseURL,
             timeout: this.config.timeout
         };
@@ -44,14 +44,14 @@ class StreetManagerStreetLookupClient {
     }
     getStreetsByQuery(config, query) {
         return __awaiter(this, void 0, void 0, function* () {
-            let axiosConfig = this.generateRequestConfig(config, { query: query });
+            const axiosConfig = this.generateRequestConfig(config, { query: query });
             return this.httpHandler(() => this.axios.get(`/nsg/search`, axiosConfig));
         });
     }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let response = yield request();
+                const response = yield request();
                 if (response.data) {
                     return response.data;
                 }
@@ -66,7 +66,7 @@ class StreetManagerStreetLookupClient {
         return Promise.reject(err);
     }
     generateRequestConfig(config, request) {
-        let requestConfig = {
+        const requestConfig = {
             headers: {
                 token: config.token,
                 'x-request-id': config.requestId
