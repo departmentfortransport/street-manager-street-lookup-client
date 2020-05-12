@@ -10,4 +10,6 @@ export interface AdditionalSpecialDesignationsResponse {
   special_desig_periodicity_code?: AdditionalSpecialDesignationsPeriodicityCode
   asd_coordinate_geometry?: GeoJSONGeometry
   whole_road?: boolean
+  special_desig_start_date?: Date
+  special_desig_end_date?: Date
 }
