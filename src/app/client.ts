@@ -16,7 +16,7 @@ export class StreetManagerStreetLookupClient {
   private axios: AxiosInstance
 
   constructor(private config: StreetManagerStreetLookupClientConfig) {
-    let axiosRequestConfig: AxiosRequestConfig = {
+    const axiosRequestConfig: AxiosRequestConfig = {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
     }
@@ -43,13 +43,13 @@ export class StreetManagerStreetLookupClient {
   }
 
   public async getStreetsByQuery(config: RequestConfig, query: string): Promise<StreetSummaryResponse[]> {
-    let axiosConfig: AxiosRequestConfig = this.generateRequestConfig(config, { query: query })
+    const axiosConfig: AxiosRequestConfig = this.generateRequestConfig(config, { query: query })
     return this.httpHandler<StreetSummaryResponse[]>(() => this.axios.get(`/nsg/search`, axiosConfig))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
-      let response: AxiosResponse<T> = await request()
+      const response: AxiosResponse<T> = await request()
       if (response.data) {
         return response.data
       }
@@ -64,7 +64,7 @@ export class StreetManagerStreetLookupClient {
   }
 
   private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
-    let requestConfig: AxiosRequestConfig = {
+    const requestConfig: AxiosRequestConfig = {
       headers: {
         token: config.token,
         'x-request-id': config.requestId

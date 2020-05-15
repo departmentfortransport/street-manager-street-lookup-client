@@ -10,6 +10,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "lint": "tslint --project tslint.json",
+    "lint-fix": "tslint --project tslint.json --fix",
     "clean": "rimraf dist",
     "build": "npm run clean && npm run test && tsc",
     "test": "npm run lint"
