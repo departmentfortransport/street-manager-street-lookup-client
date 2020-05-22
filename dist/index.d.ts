@@ -7,4 +7,4 @@ export * from './interfaces/interestAuthority';
 export * from './interfaces/additionalSpecialDesignationsResponse';
 export * from './interfaces/streetSummaryResponse';
 export * from './interfaces/geojsonTypes';
-export * from './interfaces/reinstatementType';
+export * from './interfaces/reinstatementTypeDetails';
