@@ -1,13 +1,13 @@
-import { AdditionalSpecialDesignationCode, AdditionalSpecialDesignationsPeriodicityCode } from './referenceTypes'
+import { AdditionalSpecialDesignationCodeResponse, AdditionalSpecialDesignationsPeriodicityCodeResponse } from './referenceTypes'
 import { GeoJSONGeometry } from './geojsonTypes'
 
 export interface AdditionalSpecialDesignationsResponse {
-  street_special_desig_code: AdditionalSpecialDesignationCode
+  street_special_desig_code: AdditionalSpecialDesignationCodeResponse
   special_desig_location_text?: string
   special_desig_description?: string
   special_desig_start_time?: number
   special_desig_end_time?: number
-  special_desig_periodicity_code?: AdditionalSpecialDesignationsPeriodicityCode
+  special_desig_periodicity_code?: AdditionalSpecialDesignationsPeriodicityCodeResponse
   asd_coordinate_geometry?: GeoJSONGeometry
   whole_road?: boolean
   special_desig_start_date?: Date
