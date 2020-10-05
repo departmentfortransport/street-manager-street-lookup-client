@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var GeoJSONFeatureType;
-(function (GeoJSONFeatureType) {
-    GeoJSONFeatureType["Point"] = "Point";
-    GeoJSONFeatureType["LineString"] = "LineString";
-    GeoJSONFeatureType["Polygon"] = "Polygon";
-    GeoJSONFeatureType["MultiLineString"] = "MultiLineString";
-})(GeoJSONFeatureType = exports.GeoJSONFeatureType || (exports.GeoJSONFeatureType = {}));
+var GeoJSONFeatureTypeResponse;
+(function (GeoJSONFeatureTypeResponse) {
+    GeoJSONFeatureTypeResponse["Point"] = "Point";
+    GeoJSONFeatureTypeResponse["LineString"] = "LineString";
+    GeoJSONFeatureTypeResponse["Polygon"] = "Polygon";
+    GeoJSONFeatureTypeResponse["MultiLineString"] = "MultiLineString";
+    GeoJSONFeatureTypeResponse["upcoming_enum"] = "upcoming_enum";
+})(GeoJSONFeatureTypeResponse = exports.GeoJSONFeatureTypeResponse || (exports.GeoJSONFeatureTypeResponse = {}));
 var GeoJSONCentrePointType;
 (function (GeoJSONCentrePointType) {
     GeoJSONCentrePointType["Point"] = "Point";
