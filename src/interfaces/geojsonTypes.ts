@@ -16,6 +16,7 @@ export enum GeoJSONMultiLineStringType {
 
 export interface GeoJSONGeometry {
   type: GeoJSONFeatureTypeResponse
+  type_string: string
   coordinates: any
 }
 
