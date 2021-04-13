@@ -1,9 +1,8 @@
-export enum GeoJSONFeatureTypeResponse {
+export enum GeoJSONFeatureType {
   Point = 'Point',
   LineString = 'LineString',
   Polygon = 'Polygon',
-  MultiLineString = 'MultiLineString',
-  upcoming_enum = 'upcoming_enum'
+  MultiLineString = 'MultiLineString'
 }
 
 export enum GeoJSONCentrePointType {
@@ -15,8 +14,7 @@ export enum GeoJSONMultiLineStringType {
 }
 
 export interface GeoJSONGeometry {
-  type: GeoJSONFeatureTypeResponse
-  type_string: string
+  type: GeoJSONFeatureType
   coordinates: any
 }
 

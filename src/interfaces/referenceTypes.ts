@@ -1,4 +1,4 @@
-export enum AdditionalSpecialDesignationCodeResponse {
+export enum AdditionalSpecialDesignationCode {
   protected_street = 1,
   traffic_sensitive = 2,
   special_engineering_difficulty = 3,
@@ -22,11 +22,10 @@ export enum AdditionalSpecialDesignationCodeResponse {
   local_considerations = 27,
   winter_maintenance_routes = 28,
   hgv_approved_routes = 29,
-  emergency_services_routes = 30,
-  upcoming_enum = 999
+  emergency_services_routes = 30
 }
 
-export enum AdditionalSpecialDesignationsPeriodicityCodeResponse {
+export enum AdditionalSpecialDesignationsPeriodicityCode {
   everyday = 1,
   working_days_only = 2,
   weekends = 3,
@@ -39,11 +38,10 @@ export enum AdditionalSpecialDesignationsPeriodicityCodeResponse {
   sunday_only = 13,
   public_and_bank_holidays = 14,
   continuous_62 = 15,
-  special_arrangements_63 = 16,
-  upcoming_enum = 999
+  special_arrangements_63 = 16
 }
 
-export enum ReinstatementTypeCodeResponse {
+export enum ReinstatementTypeCode {
   carriageway_type_1 = 1,
   carriageway_type_2 = 2,
   carriageway_type_3 = 3,
@@ -53,6 +51,5 @@ export enum ReinstatementTypeCodeResponse {
   high_amenity_footway = 7,
   other_footways = 8,
   private_street = 9,
-  carriageway_type_6 = 10,
-  upcoming_enum = 999
+  carriageway_type_6 = 10
 }

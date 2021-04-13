@@ -1,13 +1,5 @@
 {
   "rules": {
-    "align": [
-      true,
-      "arguments",
-      "elements",
-      "members",
-      "parameters",
-      "statements"
-    ],
     "class-name": true,
     "comment-format": [
       true,
@@ -27,17 +19,16 @@
     "jsdoc-format": true,
     "label-position": true,
     "member-access": [
-      true,
       "check-accessor"
     ],
     "member-ordering": [
-      true,
-      { "order": "fields-first" }
+      "public-before-private",
+      "static-before-instance",
+      "variables-before-functions"
     ],
     "no-angle-bracket-type-assertion": false,
     "no-any": false,
     "no-arg": true,
-    "no-async-without-await": true,
     "no-bitwise": false,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": true,
@@ -62,11 +53,14 @@
     "no-reference": false,
     "no-require-imports": false,
     "no-shadowed-variable": true,
+    "quotemark": [
+      true,
+      "single"
+    ],
     "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-var-requires": false,
@@ -80,10 +74,6 @@
       "check-whitespace"
     ],
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single"
-    ],
     "radix": true,
     "semicolon": [true, "never"],
     "switch-default": true,
